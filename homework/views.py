@@ -6,3 +6,6 @@ def homework(request):
 
 def test(request):
     return HttpResponse("Test page")
+
+def second(request):
+    return HttpResponse("Test2page")

@@ -11,5 +11,9 @@
 <body class="parent">
     <h2>Это тестовая страница</h2>
     <p>Цвет фона поменяла на нежно-голубой</p>
+    {% for todo in todo_list %}
+        <h3>{{ todo.text}} - {{ todo.created_at }} - </h3>
+    {% endfor %}
+
 </body>
 </html>

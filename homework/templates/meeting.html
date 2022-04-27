@@ -6,34 +6,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo_Lesson28</title>
+    <title>ToMeet</title>
     <link rel="stylesheet" href="{% static 'styles/index.css' %}">
     <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}">
 </head>
-
-<body class="parent">
+<body>
     <section>
 
         <div class="create_container">
             <input class="create_input" type="text" placeholder="Напишите сюда новую задачу"/>
             <button class="create_button">Добавить</button>
         </div>
-            {% for todo in todo_list %}
+            {% for item in tomeet_list %}
         <div class="todo_container">
             <div class="todo_item">
-              <div class="todo_item_header">
-                  <label class="checkbox_container">
-                      <input type="checkbox"/>
-                      <span class="checkmark"></span>
+                <div class="todo_item_header">
+                <label class="checkbox_container">
+                    <input type="checkbox"/>
+                    <span class="checkmark"></span>
                   </label>
-                  <h4>{{ todo.text }}</h4>
-              </div>
-              <div class="todo_item_footer">
-                  <p>{{ todo.created_at }}</p>
+                  <h4>{{ item.person }}</h4>
+                </div>
+            <div class="todo_item_footer">
+                <p>{{ item.comment }}</p> 
+            </div>
+            <div>
+                <p>Номер телефона - {{ item.phone_number }}</p>
+                <p>{{ item.date_of_meeting }}</p>
                   <div class="action_buttons">
                       <img src="./icons/unfav (2).png"/>
                       <img src="./icons/delete (2).png" />
                   </div>
+                  
               </div>
               
             </div>

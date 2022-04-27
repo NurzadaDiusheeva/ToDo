@@ -43,6 +43,7 @@ section{
 .todo_container{
     padding: 30px 20px;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
@@ -51,7 +52,7 @@ section{
 .todo_item{
     border: 1px solid grey;
     border-radius: 5px;
-    width: 24%;
+    width: 20%;
     padding: 10px 15px;
     background-color: #c8e6c9;
     margin-bottom: 20px;
@@ -83,24 +84,26 @@ section{
 }
 
 .todo_item_header h4{
-    font-size: 18px;
+    font-size: 12px;
     font-family: sans-serif;
 }
 
 .todo_item_footer{
     display: flex;
+    flex-direction: column;
     padding-bottom: 0px;
     justify-content: space-between;
     align-items: center;
 }
 
 .todo_item_footer p{
-    font-size: 13px;
+    font-size: 11px;
     font-family: sans-serif;
 }
 
 .todo_item_footer .action_buttons{
     display: flex;
+    flex-direction: row-reverse;
 }
 
 .todo_item_footer img{

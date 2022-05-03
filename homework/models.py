@@ -1,4 +1,5 @@
 from django.db import models
+from requests import options
 
 class ToDo(models.Model):
     text = models.CharField(max_length=100)
@@ -8,7 +9,7 @@ class ToDo(models.Model):
 
 class ToMeet(models.Model):
     person = models.CharField(max_length=100)
-    phone_number = models.IntegerField(max_length=25)
+    phone_number = models.IntegerField(int)
     date_of_meeting = models.DateTimeField(auto_created=True)
     comment = models.TextField(max_length=1000)
     is_closed = models.BooleanField(default=False)

@@ -85,19 +85,21 @@ section{
 .todo_item_header h4{
     font-size: 20px;
     font-family: sans-serif;
-    color: green;
+    color: rgb(6, 6, 6);
 }
 
 .todo_item_footer{
     display: flex;
+    width: fit-content;
     padding-bottom: 0px;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .todo_item_footer p{
     font-size: 13px;
     font-family: sans-serif;
+    display: table-column;
 }
 
 .todo_item_footer .action_buttons{

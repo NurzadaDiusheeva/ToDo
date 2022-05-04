@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from homework.views import homework, todo_list, test, meeting_list
+from homework.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,7 +25,8 @@ urlpatterns = [
     path("", homework, name="homework"),
     path("todo_list/", todo_list, name="todo_list"),
     path("test/", test, name="test"),
-    path("meeting/", meeting_list, name="meeting")
+    path("meeting/", meeting_list, name="meeting"),
+    path("add-todo", add_todo, name="add-todo"),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

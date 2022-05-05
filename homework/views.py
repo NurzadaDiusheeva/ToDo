@@ -22,3 +22,10 @@ def add_todo(request):
     todo = ToDo(text=text)
     todo.save()
     return redirect(test)
+
+def add_tomeet(request):
+    form = request.POST
+    text = form["tomeet_text"]
+    tomeet = ToMeet(person=text)
+    tomeet.save()
+    return redirect(meeting_list)

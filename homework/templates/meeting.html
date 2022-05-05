@@ -14,32 +14,40 @@
     <section>
 
         <div class="create_container">
-            <input class="create_input" type="text" placeholder="Напишите сюда новую задачу"/>
+          <form action="{% url 'add-tomeet' %}" method="post">
+            {% csrf_token %}
+            <input class="create_input" 
+            type="text" 
+            placeholder="Напишите сюда новую задачу"
+            name="tomeet_text" />
             <button class="create_button">Добавить</button>
-        </div>
-            {% for item in tomeet_list %}
+            </form>
+          </div>
+            
         <div class="todo_container">
+          {% for item in tomeet_list %}
             <div class="todo_item">
                 <div class="todo_item_header">
-                <label class="checkbox_container">
+                  <label class="checkbox_container">
                     <input type="checkbox"/>
                     <span class="checkmark"></span>
                   </label>
                   <h4>{{ item.person }}</h4>
                 </div>
-            <div class="todo_item_footer">
-                <p>{{ item.comment }}</p>
-            <div>
-                <p>Номер телефона - {{ item.phone_number }}</p>
-                <p>{{ item.date_of_meeting }}</p>
+                <div class="todo_item_footer">
+                  <p>{{ item.comment }}</p>
+                  <div>
+                    <p>Номер телефона - {{ item.phone_number }}</p>
+                    <p>{{ item.date_of_meeting }}</p>
+                  </div>
                   <div class="action_buttons">
-                      <img src="{% static 'icons/unfav.png' %}"/>
-                      <img src="{% static 'icons/delete.png' %}" />
+                    <img src="{% static 'icons/unfav.png' %}"/>
+                    <img src="{% static 'icons/delete.png' %}" />
                   </div>
                 </div>
-              </div>
-              
             </div>
+              
+          </div>
             {% endfor %}
         </div>
     </section>

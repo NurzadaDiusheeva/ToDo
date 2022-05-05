@@ -93,13 +93,12 @@ section{
     width: fit-content;
     padding-bottom: 0px;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
 }
 
 .todo_item_footer p{
-    font-size: 13px;
+    font-size: 12px;
     font-family: sans-serif;
-    display: table-column;
 }
 
 .todo_item_footer .action_buttons{

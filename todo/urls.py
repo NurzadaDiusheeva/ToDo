@@ -1,4 +1,4 @@
-"""todo URL Configuration
+"""ToDo URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -15,21 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from homework.views import *
-from django.conf import settings
-from django.conf.urls.static import static
+from homework.views import homework, test, second
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", homework, name="homework"),
-    path("todo_list/", todo_list, name="todo_list"),
     path("test/", test, name="test"),
-    path("meeting/", meeting_list, name="meeting"),
-    path("add-todo", add_todo, name="add-todo"),
-    path("add-tomeet", add_tomeet, name="add-tomeet"),
-    path("habits/", habits, name="habits"),
-    path("add-habit", add_habit, name="add-habit"),
-]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
-    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path("test2/", second)
+]
 

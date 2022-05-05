@@ -40,3 +40,8 @@ def add_habit(request):
     habit = Habits(name=text)
     habit.save()
     return redirect(habits)
+
+def delete_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.delete()
+    return redirect(test)

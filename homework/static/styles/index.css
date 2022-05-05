@@ -105,7 +105,7 @@ section{
 
 .todo_item_footer .action_buttons{
     display: flex;
-    text-align: right;
+    float:right;
 }
 
 .todo_item_footer img{

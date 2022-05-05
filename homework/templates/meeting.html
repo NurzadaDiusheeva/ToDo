@@ -14,7 +14,7 @@
     <section>
 
         <div class="create_container">
-          <form action="{% url 'add-tomeet' %}" method="post">
+          <form action="{% url 'add-tomeet' %}" method="POST">
             {% csrf_token %}
             <input class="create_input" 
             type="text" 
@@ -23,9 +23,9 @@
             <button class="create_button">Добавить</button>
             </form>
           </div>
-            
+
+        {% for item in tomeet_list %}  
         <div class="todo_container">
-          {% for item in tomeet_list %}
             <div class="todo_item">
                 <div class="todo_item_header">
                   <label class="checkbox_container">
@@ -35,7 +35,9 @@
                   <h4>{{ item.person }}</h4>
                 </div>
                 <div class="todo_item_footer">
-                  <p>{{ item.comment }}</p>
+                  <div>
+                    <p>{{ item.comment }}</p>
+                  </div>
                   <div>
                     <p>Номер телефона - {{ item.phone_number }}</p>
                     <p>{{ item.date_of_meeting }}</p>
@@ -47,7 +49,7 @@
                 </div>
             </div>
               
-          </div>
+        </div>
             {% endfor %}
         </div>
     </section>

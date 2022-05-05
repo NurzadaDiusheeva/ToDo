@@ -15,8 +15,14 @@ class ToMeet(models.Model):
     is_closed = models.BooleanField(default=False)
     is_favorite = models.BooleanField(default=False)
 
+class Habits(models.Model):
+    name = models.CharField(max_length=100)
+    done_for_today = models.BooleanField(default=False)
+    important = models.BooleanField(default=False)
+    comment = models.TextField(max_length=250)
 
-# В приложении homework создайте модель с именем ToMeet и добавьте эти поля: persone, 
-# phone_number, date_of_meeting, comment, is_closed и is_favorite. Выберите правильные типы моделей самостоятельно. 
-# Добавьте модель в панель администратора.
+# Задание № 2
+# Создайте новую модель с именем  Habits с  полем name, done_for today, important и comment. 
+# Создайте новую форму для Habits  и отобразите их в новом Html - файле habits.html.
+
 

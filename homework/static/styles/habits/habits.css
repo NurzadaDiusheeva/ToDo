@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: #263238
+    color: #1f272c
 }
 
 section{
@@ -25,9 +25,9 @@ section{
 
 .create_button{
     padding: 12px 15px;
-    background-color: #CE93D8;
-    border: 1px solid #CE93D8;
-    color: white;
+    background-color: #f1d260;
+    border: 1px solid #edb96f;
+    color: #1f272c;
     font-size: 18px;
     text-transform: uppercase;
     font-weight: bold;
@@ -36,10 +36,9 @@ section{
 }
 
 .create_button:active{
-    border: 1px solid #CE93D8;
-    box-shadow: 2px 2px 5px 3px #FCE4EC;
+    border: 1px solid #d57b36;
+    box-shadow: 2px 2px 5px 3px #edb96f;
 }
-
 .todo_container{
     padding: 30px 20px;
     display: flex;
@@ -48,16 +47,16 @@ section{
     width: 100%;
 }
 
-.todo_item{
-    border: 1px solid grey;
+.habit_item{
+    border: 1px solid rgb(159, 157, 157);
     border-radius: 5px;
     width: 24%;
     padding: 10px 15px;
-    background-color: #c8e6c9;
+    background-color: #f3f070;
     margin-bottom: 20px;
 }
 
-.todo_item.done{
+.habit_item.done{
     background-color: rgb(222, 222, 222);
     text-decoration: line-through;
     color: #b4b0b0;
@@ -76,19 +75,19 @@ section{
     border: 2px solid rgba(255, 231, 11, 0.95);
 }
 
-.todo_item_header{
+.habit_item_header{
     display: flex;
     align-items: flex-start;
     min-height: 35px;
 }
 
-.todo_item_header h4{
-    font-size: 20px;
+.habit_item_header h4{
+    font-size: 18px;
     font-family: sans-serif;
     color: rgb(6, 6, 6);
 }
 
-.todo_item_footer{
+.habit_item_footer{
     display: flex;
     width: fit-content;
     padding-bottom: 0px;
@@ -98,17 +97,17 @@ section{
    
 }
 
-.todo_item_footer p{
+.habit_item_footer p{
     font-size: 12px;
     font-family: sans-serif;
 }
 
-.todo_item_footer .action_buttons{
+.habit_item_footer .action_buttons{
     display: flex;
-    text-align: right;
+    align-items: flex-end;
 }
 
-.todo_item_footer img{
+.habit_item_footer img{
     width: 25px;
     height: 25px;
     margin: 0 5px;

@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habits</title>
+    <link rel="stylesheet" href="{% static 'styles/habits/habits.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}">
+
+  </head>
+<body>
+    <section>
+        <div class="create_container">
+          <form action="{% url 'add-habit' %}" method="POST">
+            {% csrf_token %}
+            <input class="create_input" 
+            type="text" 
+            placeholder="Напишите привычку, которой хотите владеть"
+            name="habit_text" />
+            <button class="create_button">Добавить</button> 
+            </form>
+          </div>
+        
+          {% for habit in habit_list %}
+          <div class="todo_container">
+            <div class="habit_item">
+                <div class="habit_item_header">
+                  <label class="checkbox_container">
+                    <input type="checkbox"/>
+                    <span class="checkmark"></span>
+                  </label>
+                  <h4>{{ habit.name }}</h4>
+                </div>
+                <div class="habit_item_footer">
+                  <div>
+                    <p>{{ habit.comment }}</p>
+                  </div>
+                  <div class="action_buttons">
+                    <img src="{% static './icons/done.png' %}"/>
+                    <img src="{% static './icons/important.png' %}"/>
+                  </div>
+                </div>
+            </div>
+          
+        </div>
+            
+        </div>
+        {% endfor %}
+    </section>
+
+</body>
+</html>

@@ -93,11 +93,15 @@ section{
     color: rgb(6, 6, 6);
 }
 
+.todo_item_header h4 a{
+    text-decoration: none;
+}
+
 .todo_item_footer{
     display: flex;
     width: fit-content;
     padding-bottom: 0px;
-    justify-content: right;
+    justify-content: left;
     align-items: center;
     flex-wrap: wrap;
    
@@ -110,6 +114,7 @@ section{
 
 .todo_item_footer .action_buttons{
     display: inline-flex;
+    margin-left: auto;
     
 }
 

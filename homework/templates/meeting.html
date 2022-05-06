@@ -44,13 +44,10 @@
                   <h4>{{ item.person }}</h4>
                 </div>
                 <div class="todo_item_footer">
-                  <div>
                     <p>{{ item.comment }}</p>
-                  </div><br>
-                  <div>
                     <p>Номер телефона - {{ item.phone_number }}</p>
                     <p>{{ item.date_of_meeting }}</p>
-                  </div><br>
+                  
                   <div class="action_buttons">
                     {% if item.is_favorite %}
                       <a href="{% url 'mark-to-meet' item.id %}"><img src="{% static './icons/fav.png' %}"/></a>

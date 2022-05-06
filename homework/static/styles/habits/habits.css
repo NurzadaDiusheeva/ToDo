@@ -45,6 +45,8 @@ section{
     justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
+    flex-direction: row;
+    align-content: flex-start;
 }
 
 .habit_item{
@@ -62,15 +64,15 @@ section{
     color: #b4b0b0;
 }
 
-.todo_item.done h4, .todo_item.done p, .todo_item.done span{
+.habit_item.done h4, .habit_item.done p, .habit_item.done span{
     color: #b4b0b0;
 }
 
-.todo_item.done img{
+.habit_item.done img{
     opacity: 0.5;
 }
 
-.todo_item.marked{
+.habit_item.marked{
     background-color: rgb(255, 231, 11);
     border: 2px solid rgba(255, 231, 11, 0.95);
 }
@@ -103,8 +105,8 @@ section{
 }
 
 .habit_item_footer .action_buttons{
-    display: flex;
-    align-items: flex-end;
+    display: inline-flex;
+ 
 }
 
 .habit_item_footer img{

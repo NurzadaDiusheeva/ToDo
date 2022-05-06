@@ -18,16 +18,19 @@
             {% csrf_token %}
             <input class="create_input" 
             type="text" 
-            placeholder="Напишите сюда новую задачу"
-            name="tomeet_text" />
-            <button class="create_button">Добавить</button>
+            placeholder="Напишите, с кем будет встреча"
+            name="tomeet_text" /><br>
+            <input class="create_input" type="text" 
+            placeholder="Добавьте комментарий" name="comment"/><br>
+            <input class="create_input" type="number" placeholder="Номер телефона"
+            name="phone_number"/>
+            <button class="create_button" type="submit">Добавить</button>
             </form>
           </div>
 
         
         <div class="todo_container">
           {% for item in tomeet_list %}  
-            
             <div class="todo_item
               {% if item.is_favorite %}
                 marked
@@ -43,11 +46,11 @@
                 <div class="todo_item_footer">
                   <div>
                     <p>{{ item.comment }}</p>
-                  </div>
+                  </div><br>
                   <div>
                     <p>Номер телефона - {{ item.phone_number }}</p>
                     <p>{{ item.date_of_meeting }}</p>
-                  </div>
+                  </div><br>
                   <div class="action_buttons">
                     {% if item.is_favorite %}
                       <a href="{% url 'mark-to-meet' item.id %}"><img src="{% static './icons/fav.png' %}"/></a>

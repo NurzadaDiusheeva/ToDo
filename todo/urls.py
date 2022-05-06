@@ -1,4 +1,4 @@
-"""ToDo URL Configuration
+"""todo URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -15,13 +15,28 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from homework.views import homework, test, second
+from homework.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+   path('admin/', admin.site.urls),
     path("", homework, name="homework"),
+    path("todo_list/", todo_list, name="todo_list"),
     path("test/", test, name="test"),
-    path("test2/", second)
-]
+    path("meeting/", meeting_list, name="meeting"),
+    path("add-todo", add_todo, name="add-todo"),
+    path("add-tomeet", add_tomeet, name="add-tomeet"),
+    path("habits/", habits, name="habits"),
+    path("add-habit", add_habit, name="add-habit"),
+    path("delete-todo/<id>/", delete_todo, name="delete-todo"),
+    path("mark-todo/<id>/", mark_todo, name="mark-todo"),
+    path("unmark-todo/<id>/", unmark_todo, name="unmark-todo"),
+    path("delete-to-meet/<id>/", delete_to_meet, name="delete-to-meet"),
+    path("mark-to-meet/<id>/", mark_to_meet, name="mark-to-meet"),
+    path("unmark-to-meet/<id>/", unmark_to_meet, name="unmark-to-meet"),
+]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
 

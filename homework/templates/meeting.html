@@ -24,9 +24,15 @@
             </form>
           </div>
 
-        {% for item in tomeet_list %}  
+        
         <div class="todo_container">
-            <div class="todo_item">
+          {% for item in tomeet_list %}  
+            
+            <div class="todo_item
+              {% if item.is_favorite %}
+                marked
+              {% endif %} -->
+            ">
                 <div class="todo_item_header">
                   <label class="checkbox_container">
                     <input type="checkbox"/>
@@ -43,8 +49,17 @@
                     <p>{{ item.date_of_meeting }}</p>
                   </div>
                   <div class="action_buttons">
-                    <img src="{% static 'icons/unfav.png' %}"/>
-                    <img src="{% static 'icons/delete.png' %}" />
+                    {% if item.is_favorite %}
+                      <a href="{% url 'mark-to-meet' item.id %}"><img src="{% static './icons/fav.png' %}"/></a>
+                      {% else %}
+                      <a href="{% url 'mark-to-meet' item.id %}"><img src="{% static './icons/unfav.png' %}"/></a>
+                      {% endif %}
+
+                      {% if item.is_favorite %}
+                      <a href="{% url 'unmark-to-meet' item.id %}"><img src="{% static './icons/unfav.png' %}"/></a>
+                      {% endif %}
+
+                      <a href="{% url 'delete-to-meet' item.id %}"><img src="{% static './icons/delete.png' %}" /></a>
                   </div>
                 </div>
             </div>

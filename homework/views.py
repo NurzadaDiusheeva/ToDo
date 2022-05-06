@@ -82,3 +82,27 @@ def close_todo(request, id):
     todo.is_closed = not todo.is_closed
     todo.save()
     return redirect(test)
+
+def close_to_meet(request, id):
+    tomeet = ToMeet.objects.get(id=id)
+    tomeet.is_closed = not tomeet.is_closed
+    tomeet.save()
+    return redirect(meeting_list)
+
+def close_habit(request, id):
+    habit = Habits.objects.get(id=id)
+    habit.done_for_today = not habit.done_for_today
+    habit.save()
+    return redirect(habits)
+
+def mark_habit(request, id):
+    habit = Habits.objects.get(id=id)
+    habit.important = True
+    habit.save()
+    return redirect(habits)
+
+def unmark_habit(request, id):
+    habit = Habits.objects.get(id=id)
+    habit.important = False
+    habit.save()
+    return redirect(habits)

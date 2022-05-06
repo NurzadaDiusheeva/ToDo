@@ -6,11 +6,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo_Lesson28</title>
+    <title>ToDo</title>
     <link rel="stylesheet" href="{% static 'styles/index.css' %}">
     <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}">
 </head>
-
 <body>
     <section>
 
@@ -27,7 +26,6 @@
         </div>
             
         <div class="todo_container">
-
           {% for todo in todo_list %}
             <div class="todo_item
               {% if todo.is_favorite %}

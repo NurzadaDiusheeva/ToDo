@@ -24,23 +24,41 @@
             </form>
           </div>
         
-          {% for habit in habit_list %}
-          <div class="todo_container">
-            <div class="habit_item">
+           <div class="todo_container">
+            {% for habit in habit_list %}
+            <div class="habit_item
+            {% if habit_item.important %}
+                marked
+              {% elif habit.done_for_today %}
+                done
+              {% endif %} 
+            ">
                 <div class="habit_item_header">
                   <label class="checkbox_container">
-                    <input type="checkbox"/>
+                    <input type="checkbox"
+                    {% if habit.done_for_today %}
+                      checked
+                    {% endif %}
+                    />
                     <span class="checkmark"></span>
                   </label>
-                  <h4>{{ habit.name }}</h4>
+                  <h4><a href="{% url 'close-habit' habit.id %}">{{ habit.name }}</a></h4>
                 </div>
                 <div class="habit_item_footer">
                   <div>
                     <p>{{ habit.comment }}</p>
                   </div>
                   <div class="action_buttons">
-                    <img src="{% static './icons/done.png' %}"/>
-                    <img src="{% static './icons/important.png' %}"/>
+                    {% if habit.important %}
+                      <a href="{% url 'mark-bookmark' habit.id %}"><img src="{% static './icons/important.png' %}"/></a>
+                      {% else %}
+                      <a href="{% url 'mark-bookmark' habit.id %}"><img src="{% static './icons/fav_done.png' %}"/></a>
+                      {% endif %}
+
+                      {% if habit.important %}
+                      <a href="{% url 'unmark-bookmark' habit.id %}"><img src="{% static './icons/fav_done.png' %}"/></a>
+                      {% endif %}
+                    
                   </div>
                 </div>
             </div>

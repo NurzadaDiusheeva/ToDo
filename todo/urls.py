@@ -36,7 +36,11 @@ urlpatterns = [
     path("delete-to-meet/<id>/", delete_to_meet, name="delete-to-meet"),
     path("mark-to-meet/<id>/", mark_to_meet, name="mark-to-meet"),
     path("unmark-to-meet/<id>/", unmark_to_meet, name="unmark-to-meet"),
-    path("close-todo/<id>/", close_todo, name="close-todo")
+    path("close-todo/<id>/", close_todo, name="close-todo"),
+    path("close-to-meet/<id>/", close_to_meet, name="close-to-meet"),
+    path("close-habit/<id>/", close_habit, name="close-habit"),
+    path("mark-bookmark/<id>/", mark_habit, name="mark-bookmark"),
+    path("unmark-bookmark/<id>/", unmark_habit, name="unmark-bookmark"),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
